@@ -4,6 +4,31 @@ import { Link, useNavigate } from "react-router-dom";
 import { auth } from "../../firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import React, { useState } from 'react';
+//import { Header } from '../Header';
+
+//import { useEffect } from "react";
+//import { useSelector } from "react-redux"
+
+const Component = () => {
+
+    const appId = useSelector(
+        (state) => state.user.appId
+    );
+
+ 
+
+    return <Header>
+        <h1>lOGO</h1>
+        {
+            appId 
+            ? <data /> 
+            : <Login />
+        }
+        <p>{userData.name}</p>
+        <p>{userData.email}</p>
+    </Header>
+}
+
 
 
 export function Login(){
