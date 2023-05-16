@@ -1,39 +1,41 @@
-import { Link , useNavigate } from "react-router-dom";
+import { Link , Router, useNavigate } from "react-router-dom";
 import { auth } from "../../firebase";
 
 
 
-
-function salir() {
-    const navigate = useNavigate();
-    navigate("/");
-    return auth.signOut();
-    
-    
-}
-
 export function Home(props){
-    return(<div>
+    const navigate = useNavigate();
+    function salir() {
+        
+        navigate("/");
+        return auth.signOut();
+        
+    }
+
+
+
+    return(<div className="nav">
                 <div>
                     <div>
-                
-                        <h1><Link to="/login">Login</Link></h1>
-            
-                         <br />
-            
-                        <h1><Link to="/signup">Registrar</Link></h1>
-
-                        <br />
-
-                        <h1><Link to="/onAddProduct">Carrito</Link></h1>
                         
-
            
+                    <nav>
                         
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Productos</a></li>
+			        <li><a href="#">Ferreteria</a></li>
+			        <li><a href="#">Contacto</a></li>
+            <br />
+            <h2>{props.name?`Bienvenido - ${props.name}`:"Iniciar sesión"}</h2>
+            <br />
+
+            <button onClick={salir}>Salir</button>
+		
+	</nav>
                     </div>
                 </div>
-                 <h2>{props.name?`Bienvenido - ${props.name}`:"Iniciar sesión"}</h2>
-                 <button onClick={salir}>Salir</button>
+                 
+                 
             </div>
   );
 };

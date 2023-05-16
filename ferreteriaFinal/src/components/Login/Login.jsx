@@ -9,27 +9,6 @@ import React, { useState } from 'react';
 //import { useEffect } from "react";
 //import { useSelector } from "react-redux"
 
-const Component = () => {
-
-    const appId = useSelector(
-        (state) => state.user.appId
-    );
-
- 
-
-    return <Header>
-        <h1>lOGO</h1>
-        {
-            appId 
-            ? <data /> 
-            : <Login />
-        }
-        <p>{userData.name}</p>
-        <p>{userData.email}</p>
-    </Header>
-}
-
-
 
 export function Login(){
     const navigate = useNavigate();
@@ -77,7 +56,7 @@ export function Login(){
                 <p>
                    Crear Cuenta
                     <span>
-                        <Link to="/signup">ir</Link>
+                        <Link to="/signup"> ir  </Link>
 
                     </span>
                 </p>

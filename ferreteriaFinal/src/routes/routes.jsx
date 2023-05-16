@@ -6,7 +6,7 @@ import { ProductList } from "../components/Produc/ProductList"
 import { Header } from "../components/Produc/Header"
 import { Carrito } from "../components/Produc/Carrito"
 import { auth } from "..//firebase";
-
+//import { NavBar } from "../components/NavBar";
 
 
 import React, { useState, useEffect } from 'react';
@@ -22,7 +22,10 @@ export function MyRoutes() {
       })  
     },[])
     return(
+        
+
         <Router>
+            
             <Routes>       
                 <Route exact path="/" element={<Home name={userName}/>} />
                 <Route exact path="/login" element={<Login />} />
@@ -33,7 +36,7 @@ export function MyRoutes() {
                 
                 
 
-                
+       
                 
             </Routes>
         </Router>
